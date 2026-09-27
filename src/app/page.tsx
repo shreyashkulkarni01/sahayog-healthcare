@@ -382,7 +382,7 @@ function MainPlatformContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <HeartPulse className="w-4 h-4 text-teal-600" />
-            <span className="font-bold text-slate-800">CarePulse Unified Healthcare Coordination Platform</span>
+            <span className="font-bold text-slate-800">CarePulse Healthcare Coordination Platform (Pune, Maharashtra)</span>
             <span className="text-[11px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 font-mono">
               v1.0-MVP
             </span>

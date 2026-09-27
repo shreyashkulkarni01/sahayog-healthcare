@@ -70,7 +70,7 @@ export default function Header({
                 </span>
               </div>
               <p className="text-xs text-slate-500 hidden sm:block">
-                Unified Clinic Appointments & Emergency Ops
+                Unified Clinic Appointments & Emergency Ops • Pune Network
               </p>
             </div>
           </div>

@@ -164,7 +164,7 @@ export default function RequestAmbulanceModal({
                 required
                 value={patientPhone}
                 onChange={(e) => setPatientPhone(e.target.value)}
-                placeholder="+1 (555) 000-0000"
+                placeholder="+91 98220 12345"
                 className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:outline-hidden font-mono"
               />
             </div>
@@ -173,7 +173,7 @@ export default function RequestAmbulanceModal({
           {/* Pickup Location */}
           <div>
             <label className="block text-xs font-semibold text-slate-700 mb-1">
-              Pickup Location / Address / Landmarks <span className="text-rose-500">*</span>
+              Pickup Location / Address / Landmarks in Pune <span className="text-rose-500">*</span>
             </label>
             <div className="relative">
               <MapPin className="w-4 h-4 text-rose-500 absolute left-3 top-2.5" />
@@ -182,7 +182,7 @@ export default function RequestAmbulanceModal({
                 required
                 value={pickupLocation}
                 onChange={(e) => setPickupLocation(e.target.value)}
-                placeholder="e.g. 742 Evergreen Terrace (Near Central Metro Entrance)"
+                placeholder="e.g. Flat 302, Rohan Tarang, Wakad, Pune (Near Datta Mandir Chowk)"
                 className="w-full pl-9 pr-3 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:outline-hidden"
               />
             </div>

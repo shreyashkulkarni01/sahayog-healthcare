@@ -15,11 +15,11 @@ interface BookAppointmentModalProps {
 }
 
 const DEFAULT_DOCTORS = [
-  'Dr. Sarah Chen',
-  'Dr. Rajesh Sharma',
-  'Dr. Emily Taylor',
-  'Nurse Mark Davis',
-  'Dr. Lisa Cuddy',
+  'Dr. Aditi Joshi',
+  'Dr. Rajesh Kulkarni',
+  'Dr. Sneha Patil',
+  'Dr. Vikram Shinde',
+  'Sister Pooja Thorat',
 ];
 
 const COMMON_REASONS = [

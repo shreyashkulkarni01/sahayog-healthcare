@@ -103,7 +103,7 @@ export default function RegisterPatientModal({
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="e.g. Sarah Jenkins"
+              placeholder="e.g. Aarav Kulkarni"
               className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-teal-500/20"
             />
           </div>
@@ -151,7 +151,7 @@ export default function RegisterPatientModal({
                 required
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                placeholder="+1 (555) 000-0000"
+                placeholder="+91 98220 12345"
                 className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:outline-hidden font-mono"
               />
             </div>
@@ -179,13 +179,13 @@ export default function RegisterPatientModal({
 
           <div>
             <label className="block text-xs font-semibold text-slate-700 mb-1">
-              Residential Address / Area
+              Residential Address / Area in Pune
             </label>
             <input
               type="text"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
-              placeholder="Street address, neighborhood, city"
+              placeholder="e.g. Flat 302, Rohan Tarang, Wakad, Pune 411057"
               className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:outline-hidden"
             />
           </div>
