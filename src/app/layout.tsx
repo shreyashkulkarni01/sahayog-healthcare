@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "CarePulse - Unified Healthcare Coordination Platform",
-  description: "Unified appointment management and emergency coordination for clinics and patients",
+  title: "Sahayog - Unified Healthcare Coordination Platform (Pune)",
+  description: "Unified appointment management and emergency coordination for clinics and patients in Pune, Maharashtra",
 };
 
 export default function RootLayout({

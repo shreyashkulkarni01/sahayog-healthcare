@@ -288,8 +288,8 @@ function MainPlatformContent() {
         {loading ? (
           <div className="flex flex-col items-center justify-center min-h-[50vh] gap-3">
             <Loader2 className="w-10 h-10 text-teal-600 animate-spin" />
-            <div className="text-sm font-bold text-slate-700">Loading CarePulse Coordination Platform...</div>
-            <p className="text-xs text-slate-400">Syncing seeded records and live fleet status</p>
+            <div className="text-sm font-bold text-slate-700">Loading Sahayog Coordination Platform...</div>
+            <p className="text-xs text-slate-400">Syncing seeded records and live fleet status (Pune Network)</p>
           </div>
         ) : (
           <>
@@ -382,7 +382,7 @@ function MainPlatformContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <HeartPulse className="w-4 h-4 text-teal-600" />
-            <span className="font-bold text-slate-800">CarePulse Healthcare Coordination Platform (Pune, Maharashtra)</span>
+            <span className="font-bold text-slate-800">Sahayog Healthcare Coordination Platform (Pune, Maharashtra)</span>
             <span className="text-[11px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 font-mono">
               v1.0-MVP
             </span>

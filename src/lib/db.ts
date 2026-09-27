@@ -622,7 +622,7 @@ export function generateInitialSeed(): DatabaseSchema {
       bloodGroup: 'O+',
       unitsNeeded: 1,
       urgency: 'Urgent',
-      hospitalOrClinic: 'CarePulse Community Clinic (Wakad, Pune)',
+      hospitalOrClinic: 'Sahayog Community Clinic (Wakad, Pune)',
       contactPhone: '+91 98220 14582',
       status: 'Pending',
       notes: 'Pre-procedure reserve coordination for outpatient visit.',

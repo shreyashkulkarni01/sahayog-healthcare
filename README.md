@@ -1,16 +1,16 @@
-# CarePulse — Unified Healthcare Coordination Platform
-**Hackathon MVP Build (Solo ~4h Window)**
+# Sahayog (सहयोग) — Unified Healthcare Coordination Platform
+**Pune, Maharashtra • Hackathon MVP Build**
 
 > **CRITICAL COMPLIANCE NOTICE**: This platform is strictly an **administrative, scheduling, and emergency coordination tool**. It contains **no medical diagnosis, symptom checking, treatment advice, medication suggestions, or clinical decision-making** anywhere in its UI, copy, or logic.
 
 ---
 
 ## 📌 Problem & Context
-Small community clinics and outpatient centers currently struggle with fragmented operations:
+Small community clinics and outpatient centers in Pune currently struggle with fragmented operations:
 - Appointments are tracked across phone calls, physical paper notebooks, WhatsApp threads, and spreadsheets.
 - During emergencies, clinic staff and patients struggle to locate nearby ambulance availability, urgent blood bank stock, and emergency facility capacity.
 
-**CarePulse** brings clinic appointment management and emergency response coordination (ambulance dispatch + blood bank inventory search) into a single, unified staff dashboard.
+**Sahayog (सहयोग)** brings clinic appointment management and emergency response coordination (ambulance dispatch + blood bank inventory search) into a single, unified staff dashboard for the Pune healthcare ecosystem.
 
 ---
 

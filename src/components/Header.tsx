@@ -63,7 +63,7 @@ export default function Header({
             <div>
               <div className="flex items-center gap-2">
                 <span className="text-xl font-bold tracking-tight text-slate-900">
-                  Care<span className="text-teal-600">Pulse</span>
+                  Saha<span className="text-teal-600">yog</span>
                 </span>
                 <span className="text-[11px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-200">
                   Coordination
