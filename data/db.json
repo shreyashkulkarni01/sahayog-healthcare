@@ -1,6 +1,16 @@
 {
   "patients": [
     {
+      "name": "shreyash Kulkarni",
+      "age": 20,
+      "gender": "Male",
+      "phone": "749886369",
+      "bloodGroup": "A+",
+      "address": "flora institute of technology",
+      "id": "pat-1790504822236-730",
+      "createdAt": "2026-09-27T10:27:02.236Z"
+    },
+    {
       "id": "pat-1",
       "name": "Aarav Kulkarni",
       "age": 42,
@@ -122,6 +132,34 @@
     }
   ],
   "appointments": [
+    {
+      "patientId": "pat-1790504822236-730",
+      "patientName": "shreyash Kulkarni",
+      "patientPhone": "749886369",
+      "date": "2026-09-27",
+      "time": "09:30",
+      "reason": "Blood Pressure & Vitals Check",
+      "doctorName": "Dr. Rajesh Kulkarni",
+      "status": "Scheduled",
+      "hasFollowUp": false,
+      "notes": "",
+      "id": "apt-1790504859219-729",
+      "createdAt": "2026-09-27T10:27:39.219Z"
+    },
+    {
+      "patientId": "pat-1790504822236-730",
+      "patientName": "shreyash Kulkarni",
+      "patientPhone": "749886369",
+      "date": "2026-09-27",
+      "time": "09:30",
+      "reason": "General Health Checkup",
+      "doctorName": "Dr. Aditi Joshi",
+      "status": "Scheduled",
+      "hasFollowUp": false,
+      "notes": "",
+      "id": "apt-1790504839288-823",
+      "createdAt": "2026-09-27T10:27:19.288Z"
+    },
     {
       "id": "apt-1",
       "patientId": "pat-1",

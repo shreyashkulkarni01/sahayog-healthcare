@@ -16,8 +16,12 @@ import {
   BloodRequestStatus,
 } from '@/types';
 
-const DATA_DIR = path.join(process.cwd(), 'data');
+const isVercel = Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
+const DATA_DIR = isVercel ? '/tmp' : path.join(process.cwd(), 'data');
 const DB_FILE = path.join(DATA_DIR, 'db.json');
+
+// In-memory cache for fast read/writes and serverless resilience
+let globalMemoryDb: DatabaseSchema | null = null;
 
 // Helper to format date offset from today
 function getDateOffset(days: number): string {
@@ -735,32 +739,57 @@ export function generateInitialSeed(): DatabaseSchema {
 
 // Database helper functions
 export function getDb(): DatabaseSchema {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-  }
-
-  if (!fs.existsSync(DB_FILE)) {
-    const seed = generateInitialSeed();
-    fs.writeFileSync(DB_FILE, JSON.stringify(seed, null, 2), 'utf-8');
-    return seed;
+  if (globalMemoryDb) {
+    return globalMemoryDb;
   }
 
   try {
-    const data = fs.readFileSync(DB_FILE, 'utf-8');
-    return JSON.parse(data) as DatabaseSchema;
-  } catch (error) {
-    console.error('Error reading DB, re-initializing seed:', error);
+    if (!fs.existsSync(DATA_DIR)) {
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+
+    if (fs.existsSync(DB_FILE)) {
+      const data = fs.readFileSync(DB_FILE, 'utf-8');
+      globalMemoryDb = JSON.parse(data) as DatabaseSchema;
+      return globalMemoryDb;
+    }
+
+    // Check if bundled project seed file exists
+    const bundledFile = path.join(process.cwd(), 'data', 'db.json');
+    if (fs.existsSync(bundledFile)) {
+      const bundledData = fs.readFileSync(bundledFile, 'utf-8');
+      globalMemoryDb = JSON.parse(bundledData) as DatabaseSchema;
+      try {
+        fs.writeFileSync(DB_FILE, bundledData, 'utf-8');
+      } catch {}
+      return globalMemoryDb;
+    }
+
     const seed = generateInitialSeed();
-    fs.writeFileSync(DB_FILE, JSON.stringify(seed, null, 2), 'utf-8');
+    globalMemoryDb = seed;
+    try {
+      fs.writeFileSync(DB_FILE, JSON.stringify(seed, null, 2), 'utf-8');
+    } catch {}
     return seed;
+  } catch (error) {
+    console.error('Error reading DB, using memory fallback:', error);
+    if (!globalMemoryDb) {
+      globalMemoryDb = generateInitialSeed();
+    }
+    return globalMemoryDb;
   }
 }
 
 export function saveDb(data: DatabaseSchema): void {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
+  globalMemoryDb = data;
+  try {
+    if (!fs.existsSync(DATA_DIR)) {
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+    fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf-8');
+  } catch (err) {
+    console.warn('Could not persist to file, kept in memory cache:', err);
   }
-  fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf-8');
 }
 
 export function resetDbToSeed(): DatabaseSchema {
